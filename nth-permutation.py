@@ -24,6 +24,10 @@ initial_permutation = args.string_to_permute
 n = args.n
 consider_duplicates = args.d
 
+if n > factorial(len(initial_permutation)):
+    print("n out of range")
+    exit()
+    
 alphabetical = sorted([char for char in initial_permutation])
 temp = deepcopy(alphabetical)
 nperm = []
