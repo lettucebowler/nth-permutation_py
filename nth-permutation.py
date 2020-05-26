@@ -13,33 +13,32 @@ def ending(number):
         num_ending = 'rd'
     return num_ending
 
-def get_range(alphabetical, c, fact):
-    index = len(alphabetical) - list(reversed(alphabetical)).index(c)
-    range = index * factorial(len(alphabetical) - 1)
-    return range
+def last_index_of(a, alphabetical):
+    return len(alphabetical) - list(reversed(alphabetical)).index(a)
     
 
-def nth_perm(perm, chars, n):
-    alphabetical = sorted([char for char in initial_permutation])
-    char_frequencies = {i:alphabetical.count(i) for i in alphabetical}
-    counts = [factorial(len(chars) - 1) * char_frequencies[a] for a in char_frequencies]
-    # fact = factorial(len(chars))
-    # nperm = []
-    # for i in range(len(chars)):
-    #     # Find frequency of each letter    
-    #     alphabetical = sorted([char for char in initial_permutation])
-    #     for use in nperm:
-    #         alphabetical.remove(use)
-    #     print('{}'.format(alphabetical))
+def nth_perm(perm, chars, n, total):
+    # if len(perm) < total:
+    #     alphabetical = sorted([char for char in chars])
     #     char_frequencies = {i:alphabetical.count(i) for i in alphabetical}
-    #     for i, char in enumerate(sorted(list(set(alphabetical)))):
-    #         # print('{}:{}'.format(i, char))
-    #         r = get_range(alphabetical, char, fact)
-    #         print('{}'.format(r))
-    #         if n < r:
-    #             nperm.append(char)
+    #     ranges = {a:factorial(len(chars) - 1) * char_frequencies[a] for a in char_frequencies}
+    #     for a in ranges:
+    #         if n < ranges[a]:
+    #             perm.append(a)
+    #             chars.remove(a)
     #             break
-    return perm
+    #     perm = nth_perm(perm, chars, n, total)
+    # else:
+    #     print(str(perm))
+    #     return list(perm)
+    alphabetical = sorted([char for char in chars])
+    char_frequencies = {i:alphabetical.count(i) for i in alphabetical}
+    multiplier = 1
+    for i in char_frequencies:
+        multiplier *- char_frequencies[i]:
+    ranges = [multiplier * last_index_of(g, alphabetical) for g in char_frequencies]
+    while len(perm) < total:
+
 
 
     
@@ -74,5 +73,6 @@ if n > factorial(len(initial_permutation)):
 
 # Driver Code
 nperm = []
-perm = nth_perm(nperm, initial_permutation, n - 1)
+chars = [char for char in initial_permutation]
+perm = nth_perm(nperm, chars, n - 1, len(chars))
 print('{}{} permutation of {}: {}'.format(str(n), ending(n), initial_permutation, ''.join(perm)))
