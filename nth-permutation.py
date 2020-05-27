@@ -33,10 +33,10 @@ nperm = []
 
 if len(set(alphabetical)) != len(alphabetical):
     # Determine duplicate multiplier
-    char_frequencies = {i:alphabetical.count(i) for i in alphabetical}
-    multiplier = 1
-    for letter in char_frequencies:
-        multiplier *= factorial(char_frequencies[letter])
+    # char_frequencies = {i:alphabetical.count(i) for i in alphabetical}
+    # multiplier = 1
+    # for letter in char_frequencies:
+    #     multiplier *= factorial(char_frequencies[letter])
     
     # Eventually do something
     print('This program cannot yet handle duplicates in the input string')
