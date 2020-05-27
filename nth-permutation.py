@@ -31,14 +31,19 @@ alphabetical = sorted([char for char in initial_permutation])
 temp = deepcopy(alphabetical)
 nperm = []
 
-# Determine duplicate multiplier
-char_frequencies = {i:alphabetical.count(i) for i in alphabetical}
-multiplier = 1
-for letter in char_frequencies:
-    multiplier *= factorial(char_frequencies[letter])
-if multiplier != 1:
+if len(set(alphabetical)) != len(alphabetical):
+    # Determine duplicate multiplier
+    char_frequencies = {i:alphabetical.count(i) for i in alphabetical}
+    multiplier = 1
+    for letter in char_frequencies:
+        multiplier *= factorial(char_frequencies[letter])
+    
+    # Eventually do something
     print('This program cannot yet handle duplicates in the input string')
     exit()
+
+
+
 
 # Generate nth-permutation
 q = n - 1
