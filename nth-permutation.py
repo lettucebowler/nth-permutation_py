@@ -5,12 +5,13 @@ from copy import deepcopy
 
 def ending(number):
     num_ending = 'th'
-    if number == 1:
-        num_ending = 'st'
-    elif number == 2:
-        num_ending = 'nd'
-    elif number == 3:
-        num_ending = 'rd'
+    if not (10 < n and n < 20):
+        if number % 10 == 1:
+            num_ending = 'st'
+        elif number % 10 == 2:
+            num_ending = 'nd'
+        elif number % 10 == 3:
+            num_ending = 'rd'
     return num_ending
 
 # Parser to get base number for computations
